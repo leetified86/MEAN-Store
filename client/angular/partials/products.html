@@ -1,0 +1,38 @@
+<div class="container" ng-controller='ProductsController'>
+  <div class="row">
+    <div class="col-md-6">
+      <a href="#/dashboard">Dashboard</a> |
+      <h5>Products |</h5>
+      <a href="#/orders">Orders</a> |
+      <a href="#/customers">Customers</a> |
+      <a href="#/settings">Settings</a> |
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <input type="text">
+      <br>
+      <input type="submit" value='Filter'>
+      <br>
+      <h5>Add a new product</h5>
+      <p>Name:</p>
+      <input type="text" placeholder='name...' ng-model='new_product.name'>
+      <p>Image(url):</p>
+      <input type="text" placeholder='http://' ng-model='new_product.url'>
+      <p>Description:</p>
+      <textarea name="" id="" cols="30" rows="10" placeholder='description...' ng-model='new_product.description'></textarea>
+      <p>Initial Quantity</p>
+      <input type="number" ng-model='new_product.quantity'>
+      <input class='btn btn-primary' type="submit" ng-click='addProduct(new_product)' value='Create'>
+    </div>
+    <div class="col-md-9">
+      <div class="product" ng-repeat='product in products'>
+        <img ng-src='{{product.url}}' alt="product_image">
+        <p>{{product.name}}</p>
+        <p>({{product.quantity}} left)</p>
+      </div>      
+      <!-- <br> -->
+      <button ng-click='getMoreProducts()' class='btn btn-link'>Show More...</button>
+    </div>
+  </div>
+</div>

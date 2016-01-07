@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app='miniStore'>
+  <head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.js'></script>
+    <script src="./angular/js/app.js"></script>
+    <script src="./angular/js/angular_routes.js"></script>
+    <!-- modularized js controller files go here: look in ./angular/factories/factory_name.js-->
+    <script src='./angular/factories/customer-factory.js'></script>
+    <script src='./angular/factories/order-factory.js'></script>
+    <script src='./angular/factories/product-factory.js'></script>
+    <script src='./angular/controllers/customers-controller.js'></script>
+    <script src='./angular/controllers/orders-controller.js'></script>
+    <script src='./angular/controllers/products-controller.js'></script>
+    <script src='./angular/controllers/dashboard-controller.js'></script>
+    <!-- modularized js controller files go here: look in ./angular/controllers/controller_name.js-->
+    <style>
+      h5
+      {
+        display: inline-block;
+      }
+      img
+      {
+        height: 100px;
+        width: 100px;
+        display: block;
+        margin: 0px auto;
+        border: 1px solid silver;
+      }
+      .products
+      {
+        /*text-align: center;*/
+      }
+      .product 
+      {
+        display: inline-block;
+        width: 120px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body ng-view=''>
+    
+  </body>
+  

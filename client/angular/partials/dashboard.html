@@ -1,0 +1,42 @@
+<div class="container" ng-controller='DashboardController'>
+<div class="row">
+  <div class="col-md-6">
+    <h5>Dashboard |</h5>
+    <a href="#/products">Products</a> |
+    <a href="#/orders">Orders</a> |
+    <a href="#/customers">Customers</a> |
+    <a href="#/settings">Settings</a> |
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <input type="text" ng-model='filter_product' placeholder='search...'><br>
+    <input type="submit" ng-click=''>
+  </div>
+  <div class="col-md-9">
+    <div class="products">
+      <div class="product" ng-repeat='product in products | filter: filter_product'>
+        <img ng-src='{{product.url}}' alt="product_image">
+        <p>{{product.name}}</p>
+        <p>({{product.quantity}} left)</p>
+      </div>
+      <br>
+      <button ng-click='getMoreProducts()' class='btn btn-link'>Show More...</button>
+    </div>
+    <div id='recent_orders'>
+      <h4>Recent Orders</h4>
+      <div class="orders">
+        <p ng-repeat='order in orders'>{{order.name}} purchased {{order.quantity}} {{order.product}}...{{order.created_at | fromNow}}</p>
+      </div>
+      <button class='btn btn-link' ng-click='allOrders()'>Show all orders</button>
+    </div>
+    <div id='new_customers'>
+      <h4>New Customers</h4>
+      <div class="customers">
+        <p ng-repeat='customer in customers'>{{customer.name}} joined the store...{{customer.created_at | fromNow}}</p>
+      </div>
+      <button ng-click='allCustomers()' class='btn btn-link'>Show all customers</button>
+    </div>
+    </div>
+  </div>
+</div>
